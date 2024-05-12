@@ -1,7 +1,12 @@
+import Pagenation from "../pagenation/Pagenation";
 import styles from "./cardlist.module.css";
 
-const CardLits = () => {
-  return <div className={styles.container}>CardLits</div>;
+const CardList = () => {
+  return (
+    <div className={styles.container}>
+      <Pagenation />
+    </div>
+  );
 };
 
-export default CardLits;
+export default CardList;
