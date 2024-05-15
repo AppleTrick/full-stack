@@ -7,7 +7,9 @@ interface ThemeContextType {
   toggle: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
 
 const getFromLocalStorage = () => {
   if (typeof window !== "undefined") {
@@ -21,7 +23,9 @@ interface ThemeContextProviderProps {
   children: ReactNode;
 }
 
-export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ children }) => {
+export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
+  children,
+}) => {
   const [theme, setTheme] = useState<string>(getFromLocalStorage);
 
   const toggle = () => {
@@ -32,5 +36,9 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ chil
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={{ theme, toggle }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
