@@ -10,6 +10,7 @@ interface ThemeProviderProps {
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [mounted, setMounted] = useState(false);
 
+  // ThemeContext로 부터 값을 받아옴 값은 theme값과 toggle 함수를 받아옴
   const context = useContext(ThemeContext);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const { theme, toggle } = context;
 
+  // ui에 구체적인 적용
   if (mounted) {
     return <div className={theme}>{children}</div>;
   }
