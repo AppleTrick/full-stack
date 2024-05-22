@@ -1,5 +1,5 @@
 import Pagenation from "../pagenation/Pagenation";
-import styles from "./cardlist.module.css";
+import styles from "./cardList.module.css";
 import Card from "../card/Card";
 
 const CardList = () => {
